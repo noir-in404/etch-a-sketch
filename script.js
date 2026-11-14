@@ -17,11 +17,13 @@ submitBtn.addEventListener("click", () => {
     
     createGrid(xBoxCount);
     
+    let opacity = 0;
     container.addEventListener("mouseover", (event) => {
         let rRandom = Math.floor(Math.random()*255);
         let gRandom = Math.floor(Math.random()*255);
         let bRandom = Math.floor(Math.random()*255);
-        event.target.style.backgroundColor = `rgb(${rRandom}, ${gRandom}, ${bRandom})`;
+        event.target.style.backgroundColor = `rgb(${rRandom}, ${gRandom}, ${bRandom}, ${opacity}%)`;
+        opacity += 10;
     })
 });
 
