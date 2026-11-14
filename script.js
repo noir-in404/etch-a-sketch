@@ -18,7 +18,10 @@ submitBtn.addEventListener("click", () => {
     createGrid(xBoxCount);
     
     container.addEventListener("mouseover", (event) => {
-        event.target.style.backgroundColor = "blue";
+        let rRandom = Math.floor(Math.random()*255);
+        let gRandom = Math.floor(Math.random()*255);
+        let bRandom = Math.floor(Math.random()*255);
+        event.target.style.backgroundColor = `rgb(${rRandom}, ${gRandom}, ${bRandom})`;
     })
 });
 
@@ -37,3 +40,4 @@ function createGrid(xCount){
         createBlock();
     }
 }
+
