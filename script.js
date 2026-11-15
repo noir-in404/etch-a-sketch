@@ -13,18 +13,23 @@ submitBtn.addEventListener("click", () => {
     container.replaceChildren();
 
     xBoxCount = +xBoxInput.value;
-    // yBoxCount = +yBoxInput.value;
+
+    if(xBoxCount>100 || xBoxCount<=0){
+        alert("Input must be between 1-100");
+    } else{
+        
+        createGrid(xBoxCount);
+
+        let opacity = 0;
+        container.addEventListener("mouseover", (event) => {
+          let rRandom = Math.floor(Math.random() * 255);
+          let gRandom = Math.floor(Math.random() * 255);
+          let bRandom = Math.floor(Math.random() * 255);
+          event.target.style.backgroundColor = `rgb(${rRandom}, ${gRandom}, ${bRandom}, ${opacity}%)`;
+          opacity += 10;
+        });
+    }
     
-    createGrid(xBoxCount);
-    
-    let opacity = 0;
-    container.addEventListener("mouseover", (event) => {
-        let rRandom = Math.floor(Math.random()*255);
-        let gRandom = Math.floor(Math.random()*255);
-        let bRandom = Math.floor(Math.random()*255);
-        event.target.style.backgroundColor = `rgb(${rRandom}, ${gRandom}, ${bRandom}, ${opacity}%)`;
-        opacity += 10;
-    })
 });
 
 
